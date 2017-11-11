@@ -5,9 +5,10 @@ var cacheName = 'v1';
 var cacheFiles = [
 	'./',
 	'./index.html',
-	'/public/main-2eaa907373.css',
-	'/public/main-a3540d8151.js',
-	'/public/vendor-3f4573b4e5.js',
+	'/dist/main.css',
+	'/dist/main.js',
+	'/dist/vendor.js',
+	'/node_modules/material-design-lite/material.min.css',
 	'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic'
 ]
 

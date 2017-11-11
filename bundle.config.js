@@ -7,7 +7,8 @@ module.exports = {
         styles: './src/css/**/*.css'
       },
       vendor: {
-        scripts: './node_modules/material-design-lite/material.min.js'
+        scripts: './node_modules/material-design-lite/material.min.js',
+          styles: './node_modules/material-design-lite/material.min.css'
       }
     },
     copy: './content/**/*.{png,svg}'

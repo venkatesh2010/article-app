@@ -6,8 +6,10 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-bundle-assets": "^2.29.0",
+    "gulp-clean": "^0.3.2",
     "gulp-connect": "^2.3.1",
     "gulp-inject": "^4.3.0",
+    "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.7",
     "run-sequence": "^2.2.0"
   },
