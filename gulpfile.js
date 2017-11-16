@@ -13,12 +13,24 @@ gulp.task('connect', function () {
 });
 
 
+/*
+bundle task will take the bundle.config.js as the configuration file and does the following tasks
+1. concatenate all custom js files, uglify them, name the files as  main-*.js and place it in the public folder
+2. concatenate all the vendor js files configured in the config file, uglify them, and name the file as vendor-*.js
+3. Do exactly the same thing for css files as well
+
+*/
 
 gulp.task('bundle', function () {
   return gulp.src('./bundle.config.js')
     .pipe(bundle())
     .pipe(gulp.dest('./public'));
 });
+
+/*
+This task takes all the files that match the glob pattern and injects them into the index.html file mentioned in the variable target
+-try changing the dest('./src') to some other folder
+ */
 
 gulp.task('index', function () {
   var target = gulp.src('./src/index.html');
@@ -30,10 +42,16 @@ gulp.task('index', function () {
 });
 
 
+/*
+This task will execute other tasks in the mentioned order
+ */
+
 gulp.task('build', function (callback) {
   runSequence('bundle', 'rename', 'index', 'clean', 'connect');
 });
 
+
+/*this task renames the files */
 gulp.task('rename', function () {
   var nameMap = [
     { './public/main*.css': 'main.css' },
@@ -63,10 +81,13 @@ gulp.task('rename', function () {
     .pipe(gulp.dest('dist'));
 
 });
-
+/*
+this task deletes the folder and mentioned in the glob
+*/
 gulp.task('clean', function () {
   return gulp.src('./public', { read: false })
     .pipe(clean());
 });
 
 gulp.task('default', ['build']);
+
