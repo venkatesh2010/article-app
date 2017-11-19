@@ -78,12 +78,12 @@ template = <div class="mdl-card">
 */
 
 
-  get('https://newsapi.org/v1/articles?source=techcrunch&apiKey=33b806b9cafc4e47b04bbb171ad7f662')
+  get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=33b806b9cafc4e47b04bbb171ad7f662')
   .then(function(response) {
     var wrapper = document.getElementById('article-wrapper');
     var articleList = response.articles;
     articleList.forEach(function(a,i){
-      var article = '      <div class="mdl-card"> <div class="mdl-card__title" id=title>  </div>  <div class="mdl-card__supporting-text" id = content >  </div> <a class="mdc-button" id="link"> open </a> </div>'
+      var article = '      <div class="mdl-card"> <div class="mdl-card__title" id=title>  </div>  <div class="mdl-card__supporting-text" id = content >  </div> <a class="mdc-button" id="link"> go </a> <a class="mdc-button" id=pop-up > open </a></div>'
       var articleWrapper = document.createElement('div');
       articleWrapper.className = "mdl-cell mdl-cell--6-col";
       articleWrapper.innerHTML = article;
@@ -99,12 +99,26 @@ template = <div class="mdl-card">
     //debugger;
     var title = template.querySelector('#title');
     var content = template.querySelector('#content');
-    var link = template.querySelector('a');
+    var link = template.querySelector('a#link');
+     var popupLink = template.querySelector('a#pop-up');
     title.innerHTML = data.title;
     content.innerHTML = data.description;
       link.href = '#article-details/'+i ;
+   popupLink.addEventListener('click',function(){
+        iframe = document.querySelector('.iframe');
+        iframe.src = data.url;
+        document.querySelector('.modal-wrapper').className+=' show'
+
+    },false);
 
   }
+  window.addEventListener('load',function(){
+    document.querySelector('.modal-wrapper').addEventListener('click',function(event){
+      if(event.target == event.currentTarget){
+        event.target.className = 'modal-wrapper';
+      }
+    })
+  })
 
 
 

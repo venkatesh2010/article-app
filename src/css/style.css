@@ -16,3 +16,25 @@ body {
 	margin: 50px auto;
 }
 
+.modal-wrapper.show {
+    position: fixed;
+    display: flex;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.4);
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    align-items: center;
+    justify-content: center;
+}
+.modal-wrapper{
+    display: none;
+}
+.iframe{
+    width: 500px;
+    height: 500px;
+}
+.iframe-wrapper{
+    background: white;
+}

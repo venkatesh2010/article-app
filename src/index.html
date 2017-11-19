@@ -14,8 +14,35 @@
   <!-- endinject -->
 </head>
 <body>
-
+<!-- Simple header with scrollable tabs. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Articles Demo App</span>
+    </div>
+    <!-- Tabs -->
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a href="#headlines" class="mdl-layout__tab is-active">HEADLINES</a>
+      <a href="#articles;" class="mdl-layout__tab">ARTICLES</a>
+    </div>
+  </header>
+    <main class="mdl-layout__content">
+    <div class="page-content">
 	<div class="container mdl-grid" id="article-wrapper">	
+	</div>
+
+	</div>
+  </main>
+</div>
+
+
+	<div class=modal-wrapper>
+		<div class="iframe-wrapper">
+		
+	<iframe class=iframe src=""></iframe>	
+		
+		</div>
 	</div>
 
 
@@ -34,9 +61,10 @@
 		</div>
 	  </div> -->
  <!-- inject:js -->
-  <script src="/dist/main.js"></script>
-  <script src="/dist/vendor.js"></script>
-  <!-- endinject -->
+<script src="/dist/all.js"></script>
+<script src="/dist/main.js"></script>
+<script src="/dist/vendor.js"></script>
+<!-- endinject -->
     <!-- <script src="js/app.js"></script> -->
 </body>
 </html>
